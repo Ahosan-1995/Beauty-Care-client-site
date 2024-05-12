@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { FaGoogle } from "react-icons/fa";
 
 
 const Login = () => {
@@ -51,7 +52,14 @@ const Login = () => {
              
               <div className="form-control mt-6">
                 <button className=" text-white btn bg-[#cb8d5c]">Login</button>
-                <p className="text-center mb-5 mt-10">Do not have an account please <NavLink to='/register'><span className="font-bold text-white">Register</span></NavLink></p>
+
+                <a href="#" className="flex items-center justify-center px-6 py-3 mt-4 text-white transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600">
+                    <FaGoogle></FaGoogle>
+                    <span className="mx-2">Sign in with Google</span>
+                </a>
+
+
+                <p className="text-center mb-5 mt-5">Do not have an account please <NavLink to='/register'><span className="font-bold text-white">Register</span></NavLink></p>
               </div>
             </form>
           </div>
