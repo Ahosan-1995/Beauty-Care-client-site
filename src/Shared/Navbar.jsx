@@ -8,11 +8,14 @@ const Navbar = () => {
         <NavLink to='/'><li><a>Home</a></li></NavLink>
         <NavLink to='/Service'><li><a>Service</a></li></NavLink>
         <NavLink to='/login'><li><a>Log-In</a></li></NavLink>
-        <NavLink to='/myCraft'><li><a>MY ART & CRAFT</a></li></NavLink>
-        {/* <NavLink to='/login'><li><a>Login</a></li></NavLink> */}
         <NavLink to='/register'><li><a>Register</a></li></NavLink>
-        {/* <NavLink to='/update/:id'><li><a>Update</a></li></NavLink> */}
-        <NavLink to='/sub'><li><a>Sub-category</a></li></NavLink>
+    </>
+
+    const navLinks2 = <>
+         <NavLink to='/add'><li><a>Add Service</a></li></NavLink>
+         <NavLink to='/manage'><li><a>Manage Service</a></li></NavLink>
+         <NavLink to='/booked'><li><a>Booked Service</a></li></NavLink>
+         <NavLink to='/todo'><li><a>Service-To-Do</a></li></NavLink>
     
     </>
 
@@ -44,48 +47,32 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
+              {
+                navLinks
+              }
               <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
+                <a>Dashboard</a>
                 <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
+                  {navLinks2}
                 </ul>
               </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+              
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">daisyUI</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Item 1</a>
-            </li>
+            {navLinks}
             <li>
               <details>
-                <summary>Parent</summary>
+                <summary>Dashboard</summary>
                 <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
+                {navLinks2}
                 </ul>
               </details>
             </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            
           </ul>
         </div>
         <div className="navbar-end">

@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../Pages/Home";
 import Root from "../Layout/Root";
 import ErrorPage from "../Shared/ErrorPage";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
 
 
 
@@ -15,6 +17,14 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
+            },
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/register',
+                element:<Register></Register>
             },
         ]
     }
