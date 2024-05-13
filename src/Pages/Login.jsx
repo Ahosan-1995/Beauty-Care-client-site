@@ -1,8 +1,60 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
+import { useContext, useState } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 const Login = () => {
+
+    const {signIn,signInWithGoogle} = useContext(AuthContext);
+        const location = useLocation();
+        const navigate = useNavigate();
+        
+        const [showPassword, setShowPassword] = useState(false);
+
+
+        const handleLogin = (e)=>{
+        
+            e.preventDefault();
+            // console.log(e.currentTarget);
+            const form = new FormData(e.currentTarget);
+            const email = form.get('email');
+            const password = form.get('password');
+    
+            console.log(email,password);
+    
+            signIn(email,password)
+            .then(result=>{
+                console.log(result.user)
+                toast('Logged in successfully.');
+    
+                navigate(location?.state? location.state: '/');
+    
+            })
+            .catch(error=>{
+                console.error(error)
+                toast('Invalid Email or password.')
+            })
+            
+    
+        }
+    
+
+
+         // GOOGLE SIGN IN
+         const handleGoogleSignIn=()=>{
+                signInWithGoogle()
+                .then(result=>{
+                    console.log(result.user);
+                })
+                .catch(error=>{
+                    console.error(error)
+                })
+         }
+
+
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200 bg-[url('https://i.ibb.co/W2J61YB/Banner5.jpg')]">
@@ -23,7 +75,7 @@ const Login = () => {
             </div>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-[#cb8d5c]">
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
               
               <div className="form-control">
                 <label className="label">
