@@ -1,13 +1,13 @@
 const Footer = () => {
   return (
-    <footer className="bg-[#cb8d5c] bg-gray-500 text-white">
+    <footer className="bg-pink-800 text-white">
       <div className="container p-6 mx-auto ">
         <div className="lg:flex ">
           <div className="w-full -mx-6 lg:w-2/5">
             <div className="px-6">
               <img
-                className="w-auto h-7"
-                src="https://merakiui.com/images/full-logo.svg"
+                className="w-20"
+                src="https://i.ibb.co/S6n3fs7/Logo.png"
                 alt=""
               />
 
@@ -123,19 +123,19 @@ const Footer = () => {
                   href="#"
                   className="block mt-2 text-sm  dark:text-gray-400 hover:underline"
                 >
-                  Mega cloud
+                  Home Service
                 </a>
                 <a
                   href="#"
                   className="block mt-2 text-sm  dark:text-gray-400 hover:underline"
                 >
-                  Aperion UI
+                  Bride and Groom Makeover
                 </a>
                 <a
                   href="#"
                   className="block mt-2 text-sm  dark:text-gray-400 hover:underline"
                 >
-                  Meraki UI
+                  Beauty Care
                 </a>
               </div>
 
@@ -144,10 +144,10 @@ const Footer = () => {
                   Contact
                 </h3>
                 <span className="block mt-2 text-sm  dark:text-gray-400 hover:underline">
-                  +1 526 654 8965
+                  +8801 526 654 8965
                 </span>
                 <span className="block mt-2 text-sm  dark:text-gray-400 hover:underline">
-                  example@email.com
+                  beautycare@email.com
                 </span>
               </div>
             </div>
@@ -156,7 +156,7 @@ const Footer = () => {
 
         <div>
           <p className="text-center  dark:text-gray-400">
-            © Brand 2020 - All rights reserved
+            © Beauty Care Brand 2020 - All rights reserved
           </p>
         </div>
       </div>

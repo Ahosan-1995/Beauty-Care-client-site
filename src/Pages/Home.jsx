@@ -11,7 +11,7 @@ import TextSlider from "./TextSlider";
 const Home = () => {
     return (
         <div className="">
-            <h2>This is home</h2>
+            <br />
             <Banner></Banner>
             <Slider></Slider>
             <Banner2></Banner2>

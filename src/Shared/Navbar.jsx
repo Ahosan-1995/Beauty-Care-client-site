@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 
@@ -40,10 +42,22 @@ const Navbar = () => {
 
 
 
+    const {user,logOut}=useContext(AuthContext);
+
+
+
+    const handleSignOut= (e)=>{
+        logOut()
+        .then()
+        .catch()
+    }
+
+
+
   return (
 
     
-      <div className="navbar bg-gray-500 text-white">
+      <div className="navbar bg-pink-800 text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -64,7 +78,7 @@ const Navbar = () => {
               
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <img className="w-20" src="https://i.ibb.co/S6n3fs7/Logo.png" alt="" />
         </div>
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">
@@ -81,7 +95,31 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+        {
+                            user ? 
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+                                </div>
+                                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 text-white">
+                                <span className="text-xs">{user.displayName}</span>
+                                </div>
+                            </div>
+                            :
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full bg-white">
+                                   
+                                </div>
+                            </div>
+                        }
+                        
+                        {
+                            user ? 
+                            <button onClick={() => {toast('Logged out successfully.'); handleSignOut();}}  className="btn">Sign Out</button>
+                            :
+                            <Link to='/login'><button className="btn">Login</button></Link>
+                          
+                        }
           <input onChange={handleToggle} type="checkbox" value="synthwave" className="toggle theme-controller"/>
         </div>
       </div>
