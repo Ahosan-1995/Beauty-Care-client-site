@@ -1,4 +1,8 @@
 const AddServices = () => {
+
+
+  // const {service_name,service_image,price,service_area,service_description,email,provider_name,provider_imageURL,_id,}=myUser;
+
   return (
     <div>
       <div>
@@ -7,12 +11,12 @@ const AddServices = () => {
             <div className="flex flex-row gap-10">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Image URL</span>
+                  <span className="label-text">Service Image URL</span>
                 </label>
                 <input
                   type="text"
                   placeholder="URL"
-                  name="url"
+                  name="service_image"
                   className="input input-bordered"
                   required
                 />
@@ -24,7 +28,7 @@ const AddServices = () => {
                 <input
                   type="text"
                   placeholder="Service Name"
-                  name="serviceName"
+                  name="service_name"
                   className="input input-bordered"
                   required
                 />
@@ -51,7 +55,7 @@ const AddServices = () => {
                 <input
                   type="text"
                   placeholder="Service Area"
-                  name="serviceArea"
+                  name="service_area"
                   className="input input-bordered"
                   required
                 />
@@ -61,24 +65,50 @@ const AddServices = () => {
             <div className="flex flex-row gap-10">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Description</span>
+                  <span className="label-text">Service Description</span>
                 </label>
                 <input
                   type="text"
                   placeholder="Description"
-                  name="description"
+                  name="service_description"
                   className="input input-bordered"
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Others</span>
+                  <span className="label-text">Service Provider Email</span>
+                </label>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+            </div>
+            <div className="flex flex-row gap-10">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Service Provider Name</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Others"
-                  name="other"
+                  placeholder="providerName"
+                  name="provider_name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Service Provider Image</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="ProviderImageURL"
+                  name="provider_imageURL"
                   className="input input-bordered"
                   required
                 />

@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 
 
 const PopularService = ({myUser}) => {
-  const {service_name,service_description,price,service_image,service_area,_id}=myUser;
-  const {user} = useContext(AuthContext);
+  const {service_name,service_description,price,service_image,service_area,_id,email,provider_name,provider_imageURL}=myUser;
+
   return (
     <div>
       <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 mx-auto mt-10 mb-10">
@@ -32,15 +33,15 @@ const PopularService = ({myUser}) => {
               <div className="flex items-center">
                 <img
                   className="object-cover h-10 rounded-full"
-                  src={user.photoURL}
+                  src={provider_imageURL}
                   alt="Avatar"
                 />
-                <p className="ml-2 font-bold">{user.displayName}</p>
+                <p className="ml-2 font-bold">{provider_name}</p>
                 
               </div>
               
             </div>
-            <button className="bg-[#cb8d5c] rounded-lg p-3 w-full mt-8 text-white font-bold">View Details</button>
+            <Link to={`/details/${_id}`}><button className="bg-[#cb8d5c] rounded-lg p-3 w-full mt-8 text-white font-bold">View Details</button></Link>
           </div>
         </div>
 
