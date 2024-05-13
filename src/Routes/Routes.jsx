@@ -20,6 +20,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
+                loader: ()=>fetch('http://localhost:5000/assignment')
             },
             {
                 path:'/login',
@@ -36,7 +37,8 @@ const router = createBrowserRouter([
             {
                 path: '/manageService',
                 element: <PrivateRoute><ManageService></ManageService></PrivateRoute>
-            }
+            },
+          
         ]
     }
 ]);

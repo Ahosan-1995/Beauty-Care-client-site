@@ -1,0 +1,58 @@
+[
+  {
+    "service_name": "Haircut",
+    "service_description": "Get a professional haircut by our experienced stylists. Whether you're looking for a trim, a completely new style, or just need to freshen up your look, we've got you covered. Our stylists will consult with you to understand your preferences and provide personalized recommendations to suit your hair type and face shape. Walk out feeling confident and stylish.",
+    "price": "$30",
+    "service_image": "https://example.com/haircut.jpg",
+    "service_area": "Banani"
+  },
+  {
+    "service_name": "Hair Coloring",
+    "service_description": "Transform your hair with expert coloring services using high-quality products. Whether you want to cover gray, enhance your natural color, or try something bold and trendy, our skilled colorists will help you achieve the look you desire. We offer a range of techniques including highlights, balayage, and full color treatments to suit your individual style and preferences.",
+    "price": "$50",
+    "service_image": "https://example.com/hair_coloring.jpg",
+    "service_area": "Gulshan"
+  },
+  {
+    "service_name": "Facial",
+    "service_description": "Indulge in a customized facial treatment tailored to your skin's specific needs. Our experienced estheticians will assess your skin type and concerns to create a personalized skincare regimen that addresses issues such as acne, dryness, aging, or sensitivity. Relax and rejuvenate as we cleanse, exfoliate, and nourish your skin, leaving you with a radiant and glowing complexion.",
+    "price": "$40",
+    "service_image": "https://example.com/facial.jpg",
+    "service_area": "Mirpur"
+  },
+  {
+    "service_name": "Waxing",
+    "service_description": "Experience smooth and hair-free skin with our effective waxing services. From eyebrows to legs, our skilled technicians use gentle yet efficient techniques to remove unwanted hair, leaving your skin silky soft and smooth. Say goodbye to razors and hello to long-lasting results with our professional waxing treatments.",
+    "price": "$25",
+    "service_image": "https://example.com/waxing.jpg",
+    "service_area": "Badda"
+  },
+  {
+    "service_name": "Manicure",
+    "service_description": "Treat your hands to a luxurious manicure experience. Our nail technicians will shape, buff, and polish your nails to perfection, while also tending to your cuticles and moisturizing your hands. Choose from a wide range of nail colors and finishes to express your personal style and leave with nails that are as beautiful as they are healthy.",
+    "price": "$20",
+    "service_image": "https://example.com/manicure.jpg",
+    "service_area": "Kuril"
+  },
+  {
+    "service_name": "Pedicure",
+    "service_description": "Give your feet the care they deserve with a relaxing pedicure. Sit back and unwind as we soak, exfoliate, and pamper your tired feet. Our skilled technicians will trim and shape your nails, remove calluses, and massage your feet and calves to leave you feeling refreshed and revitalized. Walk out with soft, smooth, and sandal-ready feet.",
+    "price": "$25",
+    "service_image": "https://example.com/pedicure.jpg",
+    "service_area": "Tongi"
+  },
+  {
+    "service_name": "Shaving",
+    "service_description": "Experience the ultimate shaving experience with our professional barbers. Whether you prefer a classic straight razor shave or a modern shave with a safety razor, our skilled barbers will ensure a close and comfortable shave every time. Sit back and relax as we prepare your skin, lather on luxurious shaving cream, and expertly remove unwanted facial hair, leaving your skin smooth and rejuvenated.",
+    "price": "$15",
+    "service_image": "https://example.com/shaving.jpg",
+    "service_area": "Gulshan-2"
+  },
+  {
+    "service_name": "Makeup Application",
+    "service_description": "Enhance your natural beauty with our professional makeup application services. Whether you're getting ready for a special occasion or just want to look your best every day, our talented makeup artists will create a flawless look that complements your features and personal style. From natural and understated to glamorous and dramatic, we'll help you achieve the perfect look for any event.",
+    "price": "$40",
+    "service_image": "https://example.com/makeup.jpg",
+    "service_area": "Jatrabari"
+  }
+]
