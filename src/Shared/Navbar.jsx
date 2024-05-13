@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 
@@ -12,12 +13,30 @@ const Navbar = () => {
     </>
 
     const navLinks2 = <>
-         <NavLink to='/add'><li><a>Add Service</a></li></NavLink>
-         <NavLink to='/manage'><li><a>Manage Service</a></li></NavLink>
+         <NavLink to='/addServices'><li><a>Add Service</a></li></NavLink>
+         <NavLink to='/manageService'><li><a>Manage Service</a></li></NavLink>
          <NavLink to='/booked'><li><a>Booked Service</a></li></NavLink>
          <NavLink to='/todo'><li><a>Service-To-Do</a></li></NavLink>
     
     </>
+
+
+    const [theme, setTheme] = useState(localStorage.getItem('theme')?localStorage.getItem('theme'):'light');
+
+
+    useEffect(()=>{
+        localStorage.setItem('theme', theme);
+        const localTheme = localStorage.getItem('theme');
+        document.querySelector('html').setAttribute('data-theme',localTheme)
+    },[theme]);
+
+    const handleToggle = e =>{
+        if(e.target.checked){
+            setTheme('dark');
+        }else{
+            setTheme('light');
+        }
+    }
 
 
 
@@ -63,6 +82,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <a className="btn">Button</a>
+          <input onChange={handleToggle} type="checkbox" value="synthwave" className="toggle theme-controller"/>
         </div>
       </div>
    
