@@ -1,15 +1,13 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { Link, useLoaderData } from "react-router-dom";
+const AllServicesCard = ({myUser}) => {
+    const {service_name,service_description,price,service_image,service_area,_id,email,provider_name,provider_imageURL}=myUser;
 
 
 
-
-const PopularService = ({myUser}) => {
-  
-  const {service_name,service_description,price,service_image,service_area,_id,email,provider_name,provider_imageURL}=myUser;
-
-  return (
-    <div>
+    return (
+        <div>
       <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 mx-auto mt-10 mb-10">
         <img
           className="object-cover w-full h-64"
@@ -21,6 +19,10 @@ const PopularService = ({myUser}) => {
           <div>
             <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
               Service-Charge <span>{price}</span>
+            </span>
+            <br />
+            <span className="text-xl font-medium dark:text-blue-400">
+              Service-Area: <span>{service_area}</span>
             </span>
             <p className="text-3xl font-bold text-[#cb8d5c]">{service_name}</p>
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
@@ -47,7 +49,7 @@ const PopularService = ({myUser}) => {
 
       </div>
     </div>
-  );
+    );
 };
 
-export default PopularService;
+export default AllServicesCard;

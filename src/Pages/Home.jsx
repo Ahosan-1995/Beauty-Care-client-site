@@ -20,7 +20,7 @@ const Home = () => {
             <Slider></Slider>
             <Banner2></Banner2>
             {
-                myUsers.map(myUser=><PopularService key={myUser._id} myUser={myUser}></PopularService>)
+                myUsers.slice(0, 6).map(myUser=><PopularService key={myUser._id} myUser={myUser}></PopularService>)
             }
             <TextSlider></TextSlider>
         </div>

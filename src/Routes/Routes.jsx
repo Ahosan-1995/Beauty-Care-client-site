@@ -8,6 +8,7 @@ import AddServices from "../Pages/AddServices";
 import ManageService from "../Pages/ManageService";
 import PrivateRoute from "./PrivateRoute";
 import ServiceDetails from "../Pages/ServiceDetails";
+import AllServices from "../Pages/AllServices";
 
 
 
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
             {
                 path:'/login',
                 element:<Login></Login>
+            },
+            {
+                path: '/allServices',
+                element: <AllServices></AllServices>,
+                loader: ()=>fetch('http://localhost:5000/assignment')
             },
             {
                 path:'/register',
