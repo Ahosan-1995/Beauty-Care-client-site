@@ -107,7 +107,7 @@ const ManageService = () => {
                             <th>Item Name</th>
                             <th>Provider Name</th>
                             <th>Price</th>
-                            <th>Date</th>
+                            <th>Area</th>
                             <th>Action</th>
                             <th>Action</th>
                         </tr>
@@ -120,7 +120,7 @@ const ManageService = () => {
                                     <td>{emailCard1.service_name}</td>
                                     <td>{emailCard1.provider_name}</td>
                                     <td>{emailCard1.price}</td>
-                                    <td>{emailCard1.date}</td>
+                                    <td>{emailCard1.service_area}</td>
                                     <Link onClick={()=>handleDelete(emailCard1._id)}><td><button>Delete</button></td></Link>
                                     <Link to={`/update/${emailCard1._id}`}><td><button>Update</button></td></Link>
                                 </tr>)
