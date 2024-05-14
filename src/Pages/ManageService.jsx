@@ -45,7 +45,7 @@ const ManageService = () => {
 
             }
 
-            fetch(`http://localhost:5000/assignment/:email/${id}`,{
+            fetch(`http://localhost:5000/assignment/${id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())
@@ -105,11 +105,11 @@ const ManageService = () => {
                         <thead>
                         <tr>
                             <th>Item Name</th>
+                            <th>Provider Name</th>
                             <th>Price</th>
-                            <th>Rating</th>
-                            <th>Stock</th>
+                            <th>Date</th>
                             <th>Action</th>
-                            <th>Update</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
 
@@ -117,11 +117,11 @@ const ManageService = () => {
 {/* row 1 */}
                             {
                                 emailCrad.map(emailCard1=> <tr key={emailCard1._id}>
-                                    <td>Name</td>
-                                    <td>Price</td>
-                                    <td>Rating</td>
-                                    <td>Stock</td>
-                                    <Link onClick={handleDelete}><td><button>Delete</button></td></Link>
+                                    <td>{emailCard1.service_name}</td>
+                                    <td>{emailCard1.provider_name}</td>
+                                    <td>{emailCard1.price}</td>
+                                    <td>{emailCard1.date}</td>
+                                    <Link onClick={()=>handleDelete(emailCard1._id)}><td><button>Delete</button></td></Link>
                                     <Link to={`/update/${emailCard1._id}`}><td><button>Update</button></td></Link>
                                 </tr>)
                             }
@@ -136,5 +136,5 @@ const ManageService = () => {
         </div>
     );
 };
-
+// const allData={service_name,price,service_image,email,provider_name,user_email,user_name,date,service_area,pending}//have to delete just for help
 export default ManageService;
