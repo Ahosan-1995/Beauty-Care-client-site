@@ -9,9 +9,8 @@ const Navbar = () => {
     const navLinks = <>
 
         <NavLink to='/'><li><a>Home</a></li></NavLink>
-        <NavLink to='/Service'><li><a>Service</a></li></NavLink>
         <NavLink to='/allServices'><li><a>All Services</a></li></NavLink>
-        <NavLink to='/login'><li><a>Log-In</a></li></NavLink>
+        {/* <NavLink to='/login'><li><a>Log-In</a></li></NavLink> */}
         <NavLink to='/register'><li><a>Register</a></li></NavLink>
         
     </>
@@ -71,12 +70,25 @@ const Navbar = () => {
               {
                 navLinks
               }
-              <li>
+
+              {/* <li>
+                <a>Dashboard</a>
+                <ul className="p-2 ">
+                  {navLinks2}
+                </ul>
+              </li> */}
+
+              {
+                user?
+                <li>
                 <a>Dashboard</a>
                 <ul className="p-2 ">
                   {navLinks2}
                 </ul>
               </li>
+              :
+              <></>
+              }
               
             </ul>
           </div>
@@ -85,7 +97,9 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">
             {navLinks}
-            <li>
+            {
+              user?
+              <li>
               <details>
                 <summary>Dashboard</summary>
                 <ul className="p-2 bg-[#cb8d5c]">
@@ -93,6 +107,9 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>
+            :
+            <></>
+            }
             
           </ul>
         </div>

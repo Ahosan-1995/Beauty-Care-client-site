@@ -9,6 +9,7 @@ import ManageService from "../Pages/ManageService";
 import PrivateRoute from "./PrivateRoute";
 import ServiceDetails from "../Pages/ServiceDetails";
 import AllServices from "../Pages/AllServices";
+import ServiceBooking from "../Pages/ServiceBooking";
 
 
 
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addServices',
-                element: <AddServices></AddServices>
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>
             },
             {
                 path: '/manageService',
@@ -49,8 +50,12 @@ const router = createBrowserRouter([
                 path:'/details/:id',
                 element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
                 loader: ({params})=> fetch (`http://localhost:5000/assignment/${params.id}`)
-                
             },
+            {
+                path: '/details/book/:id',
+                element: <ServiceBooking></ServiceBooking>,
+                loader: ({params})=> fetch (`http://localhost:5000/assignment/${params.id}`)
+            }
           
         ]
     }
