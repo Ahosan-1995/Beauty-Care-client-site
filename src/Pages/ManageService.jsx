@@ -1,6 +1,99 @@
+import { useContext, useEffect, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const ManageService = () => {
+
+    const loaderData = useLoaderData();
+
+    // console.log(loaderData);
+
+    const [emailCrad, setemailCard] = useState([]);
+
+    const {user}=useContext(AuthContext);
+    const email = user?.email;
+
+    // console.log(email);
+
+    // For delete operation
+    const [users, setUsers]= useState(loaderData);
+
+    const handleDelete = id =>{
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+              
+              
+
+
+
+
+
+            }
+
+            fetch(`http://localhost:5000/assignment/:email/${id}`,{
+                method:'DELETE'
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                if(data.deletedCount>0){
+                    console.log('deleted Successfully');
+                    // remove user from ui
+                    const remainingUsers = emailCrad.filter(emailcard2=emailcard2._id !== id);
+                    setemailCard(remainingUsers);
+                }
+            })
+
+
+          });
+
+
+    }
+
+
+
+    // 
+
+
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/assignmentemail/${email}`)
+        .then(res=>res.json())
+        .then(data=>{
+            // console.log(data);
+            setemailCard(data);
+            
+        })
+    },[email])
+
+    console.log(emailCrad);
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div>
             
@@ -8,7 +101,7 @@ const ManageService = () => {
             <div>
                     <div className="overflow-x-auto">
                         <table className="table">
-                            {/* head */}
+{/* head */}
                         <thead>
                         <tr>
                             <th>Item Name</th>
@@ -22,14 +115,16 @@ const ManageService = () => {
 
                         <tbody>
 {/* row 1 */}
-                            <tr>
-                                <td>Name</td>
-                                <td>Price</td>
-                                <td>Rating</td>
-                                <td>Stock</td>
-                                <td><button>Delete</button></td>
-                                <td><button>Update</button></td>
-                            </tr>
+                            {
+                                emailCrad.map(emailCard1=> <tr key={emailCard1._id}>
+                                    <td>Name</td>
+                                    <td>Price</td>
+                                    <td>Rating</td>
+                                    <td>Stock</td>
+                                    <Link onClick={handleDelete}><td><button>Delete</button></td></Link>
+                                    <Link to={`/update/${emailCard1._id}`}><td><button>Update</button></td></Link>
+                                </tr>)
+                            }
                         </tbody>
                     </table>
                 </div>

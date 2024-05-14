@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import ServiceDetails from "../Pages/ServiceDetails";
 import AllServices from "../Pages/AllServices";
 import ServiceBooking from "../Pages/ServiceBooking";
+import UpdateService from "../Pages/UpdateService";
 
 
 
@@ -39,12 +40,15 @@ const router = createBrowserRouter([
                 element:<Register></Register>
             },
             {
-                path:'/addServices',
-                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>
+                path:'/addServices/',
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>,
+                
             },
             {
                 path: '/manageService',
-                element: <PrivateRoute><ManageService></ManageService></PrivateRoute>
+                element: <PrivateRoute><ManageService></ManageService></PrivateRoute>,
+                loader: ()=>fetch('http://localhost:5000/assignment')
+
             },
             {
                 path:'/details/:id',
@@ -54,6 +58,11 @@ const router = createBrowserRouter([
             {
                 path: '/details/book/:id',
                 element: <ServiceBooking></ServiceBooking>,
+                loader: ({params})=> fetch (`http://localhost:5000/assignment/${params.id}`)
+            },
+            {
+                path:'/update/:id',
+                element: <PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
                 loader: ({params})=> fetch (`http://localhost:5000/assignment/${params.id}`)
             }
           

@@ -25,8 +25,9 @@ const ServiceBooking = () => {
         const user_name =form.user_name.value;
         const date = form.date.value;
         const service_area = form.service_area.value;
+        const pending = form.pending.value;
 
-        const allData={service_name,price,service_image,email,provider_name,user_email,user_name,date,service_area}
+        const allData={service_name,price,service_image,email,provider_name,user_email,user_name,date,service_area,pending}
 
         console.log(allData);
         // sent data to server
@@ -184,7 +185,8 @@ const ServiceBooking = () => {
                 />
               </div>
             </div>
-            <div className="form-control w-2/6">
+            <div className="flex flex-row gap-10">
+            <div className="form-control">
                 <label className="label">
                   <span className="label-text">Service Taking Date</span>
                 </label>
@@ -195,6 +197,22 @@ const ServiceBooking = () => {
                   className="input input-bordered"
                   required
                 />
+            </div>
+            <div className="form-control hidden">
+                <label className="label">
+                  <span className="label-text">Service Status</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder=""
+                  name="pending"
+                  className="input input-bordered"
+                  defaultValue='pending'
+                  required
+                  readOnly
+                  
+                />
+            </div>
             </div>
           </div>
           <div className="form-control mt-6">

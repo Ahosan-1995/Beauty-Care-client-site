@@ -1,12 +1,64 @@
+
+import { useContext } from "react";
+import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+
+
 const AddServices = () => {
+  const {user}=useContext(AuthContext);
 
 
-  // const {service_name,service_image,price,service_area,service_description,email,provider_name,provider_imageURL,_id,}=myUser;
+
+
+    const handleSubmit =(e)=>{
+
+        e.preventDefault();
+        const form = e.target;
+        const service_name = form.service_name.value;
+        const service_image = form.service_image.value;
+        const price =form.price.value;
+        const service_area =form.service_area.value;
+        const service_description =form.service_description.value;
+        const email = form.email.value;
+        const provider_name =form.provider_name.value;
+        const provider_imageURL =form.provider_imageURL.value;
+
+        
+
+        const allData={service_name,service_image,price,service_area,service_description,email,provider_name,provider_imageURL}
+
+        // console.log(allData);
+        // sent data to server
+        fetch('http://localhost:5000/assignment',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(allData)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.insertedId){
+                // toast('Data added successfully to the database');
+                Swal.fire({
+                    title: 'Success',
+                    text: 'User Added Successfully',
+                    icon: 'Success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
+        
+    }
+
+
+
 
   return (
     <div>
       <div>
-        <form className="card-body">
+        <form onSubmit={handleSubmit} className="card-body">
           <div className="flex flex-col justify-center items-center bg-[url('https://i.ibb.co/W2J61YB/Banner5.jpg')] p-10 bg-cover">
             <div className="flex flex-row gap-10">
               <div className="form-control">
@@ -84,6 +136,7 @@ const AddServices = () => {
                   placeholder="Email"
                   name="email"
                   className="input input-bordered"
+                  defaultValue={user.email}
                   required
                 />
               </div>
@@ -98,6 +151,7 @@ const AddServices = () => {
                   placeholder="providerName"
                   name="provider_name"
                   className="input input-bordered"
+                  defaultValue={user?.displayName}
                   required
                 />
               </div>
@@ -110,6 +164,7 @@ const AddServices = () => {
                   placeholder="ProviderImageURL"
                   name="provider_imageURL"
                   className="input input-bordered"
+                  defaultValue={user?.photoURL}
                   required
                 />
               </div>
