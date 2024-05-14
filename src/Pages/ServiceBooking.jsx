@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const ServiceBooking = () => {
@@ -8,11 +9,59 @@ const ServiceBooking = () => {
     const {user}=useContext(AuthContext);
 
     const myUser = useLoaderData();
-    const {service_name,service_description,price,service_image,service_area,_id,email,provider_name,provider_imageURL}=myUser;
+    const {service_name,price,service_image,service_area,_id,email,provider_name}=myUser;
+
+
+    const handlePurchase =(e)=>{
+
+        e.preventDefault();
+        const form = e.target;
+        const service_name = form.service_name.value;
+        const price = form.price.value;
+        const service_image =form.service_image.value;
+        const email = form.email.value;
+        const provider_name =form.provider_name.value;
+        const user_email =form.user_email.value;
+        const user_name =form.user_name.value;
+        const date = form.date.value;
+        const service_area = form.service_area.value;
+
+        const allData={service_name,price,service_image,email,provider_name,user_email,user_name,date,service_area}
+
+        console.log(allData);
+        // sent data to server
+        fetch('http://localhost:5000/add_purchase',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(allData)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.insertedId){
+                // toast('Data added successfully to the database');
+                Swal.fire({
+                    title: 'Success',
+                    text: 'User Added Successfully',
+                    icon: 'Success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
+        
+    }
+
+
+
+
+
+
 
     return (
         <div>
-            <form className="card-body">
+            <form onSubmit={handlePurchase} className="card-body">
           <div className="flex flex-col justify-center items-center bg-[url('https://i.ibb.co/W2J61YB/Banner5.jpg')] p-10 bg-cover">
             <div className="flex flex-row gap-10">
               <div className="form-control">
