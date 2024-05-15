@@ -8,6 +8,7 @@ Live site:
 
 
 Features of this site:
+- Selected category-assignment_category_0002 and Sub category Beauty and Grooming Services
 - Single page application loaded data efficiently
 - Full navigation control on the home page.
 - Data will be loaded very first and accurately.
