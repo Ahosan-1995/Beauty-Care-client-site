@@ -11,6 +11,8 @@ import ServiceDetails from "../Pages/ServiceDetails";
 import AllServices from "../Pages/AllServices";
 import ServiceBooking from "../Pages/ServiceBooking";
 import UpdateService from "../Pages/UpdateService";
+import BookedService from "../Pages/BookedService";
+import Todo from "../Pages/Todo";
 
 
 
@@ -57,13 +59,22 @@ const router = createBrowserRouter([
             },
             {
                 path: '/details/book/:id',
-                element: <ServiceBooking></ServiceBooking>,
+                element: <PrivateRoute><ServiceBooking></ServiceBooking></PrivateRoute>,
                 loader: ({params})=> fetch (`http://localhost:5000/assignment/${params.id}`)
             },
             {
                 path:'/update/:id',
                 element: <PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
                 loader: ({params})=> fetch (`http://localhost:5000/assignment/${params.id}`)
+            },
+            {
+                path: '/bookedService',
+                element:<PrivateRoute><BookedService></BookedService></PrivateRoute>,
+                // loader: ()=>fetch('http://localhost:5000/add_purchase')
+            },
+            {
+                path:'/todo',
+                element:<Todo></Todo>
             }
           
         ]

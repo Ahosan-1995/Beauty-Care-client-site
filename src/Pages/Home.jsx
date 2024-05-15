@@ -5,11 +5,19 @@ import Banner2 from "./Banner2";
 import PopularService from "./PopularService";
 import Slider from "./Slider";
 import TextSlider from "./TextSlider";
+import { useEffect } from "react";
 
 
 
 
 const Home = () => {
+
+
+
+    useEffect(()=>{
+        document.title = 'Beauty_care-Home';
+    },[])
+
     const myUsers=useLoaderData();
     // console.log(myUsers);
 

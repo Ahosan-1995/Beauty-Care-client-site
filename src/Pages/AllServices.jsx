@@ -1,8 +1,14 @@
 import {useLoaderData } from "react-router-dom";
 import AllServicesCard from "./AllServicesCard";
+import { useEffect } from "react";
 
 
 const AllServices = () => {
+
+
+  useEffect(()=>{
+    document.title = 'Beauty_care-All Services';
+},[])
 
     const myUsers = useLoaderData();
     

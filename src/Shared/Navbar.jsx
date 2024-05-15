@@ -2,6 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import { FaSearch } from "react-icons/fa";
+import SearchBar from "./SearchBar";
+import SearchResult from "./SearchResult";
 
 
 
@@ -18,7 +21,7 @@ const Navbar = () => {
     const navLinks2 = <>
          <NavLink to='/addServices'><li><a>Add Service</a></li></NavLink>
          <NavLink to='/manageService'><li><a>Manage Service</a></li></NavLink>
-         <NavLink to='/booked'><li><a>Booked Service</a></li></NavLink>
+         <NavLink to='/bookedService'><li><a>Booked Service</a></li></NavLink>
          <NavLink to='/todo'><li><a>Service-To-Do</a></li></NavLink>
     
     </>
@@ -54,6 +57,13 @@ const Navbar = () => {
     }
 
 
+{/* This section only for serach bar....................................... */}
+const [results, setResults]=useState([]);
+
+
+{/* This section only for serach bar....................................... */}
+
+
 
   return (
 
@@ -71,12 +81,6 @@ const Navbar = () => {
                 navLinks
               }
 
-              {/* <li>
-                <a>Dashboard</a>
-                <ul className="p-2 ">
-                  {navLinks2}
-                </ul>
-              </li> */}
 
               {
                 user?
@@ -93,6 +97,18 @@ const Navbar = () => {
             </ul>
           </div>
           <img className="w-20" src="https://i.ibb.co/S6n3fs7/Logo.png" alt="" />
+
+{/* This section only for serach bar....................................... */}
+          <div className="ml-12 ">
+              <SearchBar setResults={setResults}></SearchBar>
+              <SearchResult  results={results}></SearchResult>
+          </div>
+{/* This section only for serach bar....................................... */}
+
+
+
+
+
         </div>
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">

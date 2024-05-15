@@ -1,10 +1,14 @@
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const AddServices = () => {
+
+  useEffect(()=>{
+    document.title = 'Beauty_care-All Services';
+},[])
   const {user}=useContext(AuthContext);
 
 

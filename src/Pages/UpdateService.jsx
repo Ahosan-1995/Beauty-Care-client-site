@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -6,6 +7,10 @@ import Swal from "sweetalert2";
 
 
 const UpdateService = () => {
+
+  useEffect(()=>{
+    document.title = 'Beauty_care-Update';
+},[])
 
 
   const myUsers = useLoaderData();

@@ -1,10 +1,14 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 
 const ServiceBooking = () => {
+
+  useEffect(()=>{
+    document.title = 'Beauty_care-Booking';
+},[])
 
     const {user}=useContext(AuthContext);
 
@@ -165,7 +169,7 @@ const ServiceBooking = () => {
                   placeholder="Email"
                   name="user_email"
                   className="input input-bordered"
-                  defaultValue={user?.displayName}
+                  defaultValue={user?.email}
                   readOnly
                   required
                 />
@@ -179,7 +183,7 @@ const ServiceBooking = () => {
                   placeholder="ProviderImageURL"
                   name="user_name"
                   className="input input-bordered"
-                  defaultValue={user?.photoURL}
+                  defaultValue={user?.displayName}
                   readOnly
                   required
                 />

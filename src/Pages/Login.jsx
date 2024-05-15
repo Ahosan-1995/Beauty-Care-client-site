@@ -1,11 +1,15 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 
 
 const Login = () => {
+
+  useEffect(()=>{
+    document.title = 'Beauty_care-Login';
+},[])
 
     const {signIn,signInWithGoogle} = useContext(AuthContext);
         const location = useLocation();

@@ -6,7 +6,11 @@ import Swal from "sweetalert2";
 
 const ManageService = () => {
 
-    const loaderData = useLoaderData();
+    useEffect(()=>{
+        document.title = 'Beauty_care-Manage Service';
+    },[])
+
+    // const loaderData = useLoaderData();
 
     // console.log(loaderData);
 
@@ -18,7 +22,7 @@ const ManageService = () => {
     // console.log(email);
 
     // For delete operation
-    const [users, setUsers]= useState(loaderData);
+    // const [users, setUsers]= useState(loaderData);
 
     const handleDelete = id =>{
         Swal.fire({

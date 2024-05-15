@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
@@ -6,10 +6,14 @@ import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
+  useEffect(()=>{
+    document.title = 'Beauty_care-Registration';
+},[])
+
 
     const {createUser}=useContext(AuthContext);
 
-    const [showPassword, setShowPassword] = useState(false);
+    // const [showPassword, setShowPassword] = useState(false);
 
     const handleRegister = (e)=>{
         e.preventDefault();
