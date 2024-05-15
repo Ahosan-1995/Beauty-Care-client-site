@@ -19,7 +19,7 @@ const Todo = () => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/add_purchase/${email}`)
+        fetch(`https://assignment-11-serversite.vercel.app/add_purchase/${email}`)
         .then(res=>res.json())
         .then(data=>{
             // console.log(data);

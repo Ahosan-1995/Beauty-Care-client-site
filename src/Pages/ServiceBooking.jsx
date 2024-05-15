@@ -35,7 +35,7 @@ const ServiceBooking = () => {
 
         console.log(allData);
         // sent data to server
-        fetch('http://localhost:5000/add_purchase',{
+        fetch('https://assignment-11-serversite.vercel.app/add_purchase',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

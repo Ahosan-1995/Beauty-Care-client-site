@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader: ()=>fetch('http://localhost:5000/assignment')
+                loader: ()=>fetch('https://assignment-11-serversite.vercel.app/assignment')
             },
             {
                 path:'/login',
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path: '/allServices',
                 element: <AllServices></AllServices>,
-                loader: ()=>fetch('http://localhost:5000/assignment')
+                loader: ()=>fetch('https://assignment-11-serversite.vercel.app/assignment')
             },
             {
                 path:'/register',
@@ -49,28 +49,28 @@ const router = createBrowserRouter([
             {
                 path: '/manageService',
                 element: <PrivateRoute><ManageService></ManageService></PrivateRoute>,
-                loader: ()=>fetch('http://localhost:5000/assignment')
+                loader: ()=>fetch('https://assignment-11-serversite.vercel.app/assignment')
 
             },
             {
                 path:'/details/:id',
                 element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-                loader: ({params})=> fetch (`http://localhost:5000/assignment/${params.id}`)
+                loader: ({params})=> fetch (`https://assignment-11-serversite.vercel.app/assignment/${params.id}`)
             },
             {
                 path: '/details/book/:id',
                 element: <PrivateRoute><ServiceBooking></ServiceBooking></PrivateRoute>,
-                loader: ({params})=> fetch (`http://localhost:5000/assignment/${params.id}`)
+                loader: ({params})=> fetch (`https://assignment-11-serversite.vercel.app/assignment/${params.id}`)
             },
             {
                 path:'/update/:id',
                 element: <PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
-                loader: ({params})=> fetch (`http://localhost:5000/assignment/${params.id}`)
+                loader: ({params})=> fetch (`https://assignment-11-serversite.vercel.app/assignment/${params.id}`)
             },
             {
                 path: '/bookedService',
                 element:<PrivateRoute><BookedService></BookedService></PrivateRoute>,
-                // loader: ()=>fetch('http://localhost:5000/add_purchase')
+                // loader: ()=>fetch('https://assignment-11-serversite.vercel.app/add_purchase')
             },
             {
                 path:'/todo',

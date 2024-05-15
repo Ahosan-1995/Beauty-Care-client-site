@@ -49,7 +49,7 @@ const ManageService = () => {
 
             }
 
-            fetch(`http://localhost:5000/assignment/${id}`,{
+            fetch(`https://assignment-11-serversite.vercel.app/assignment/${id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())
@@ -75,7 +75,7 @@ const ManageService = () => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/assignmentemail/${email}`)
+        fetch(`https://assignment-11-serversite.vercel.app/assignmentemail/${email}`)
         .then(res=>res.json())
         .then(data=>{
             // console.log(data);

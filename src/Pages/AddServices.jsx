@@ -33,7 +33,7 @@ const AddServices = () => {
 
         // console.log(allData);
         // sent data to server
-        fetch('http://localhost:5000/assignment',{
+        fetch('https://assignment-11-serversite.vercel.app/assignment',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

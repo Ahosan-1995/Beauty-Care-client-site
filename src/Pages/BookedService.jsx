@@ -16,7 +16,7 @@ const BookedService = () => {
   const [allBookData, setBookData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/add_purchase/${email}`)
+    fetch(`https://assignment-11-serversite.vercel.app/add_purchase/${email}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -28,7 +28,7 @@ const BookedService = () => {
 
 // For change booking status to confirm
 const handleBookingConfirm=id=>{
-    fetch(`http://localhost:5000/add_purchase/${id}`,{
+    fetch(`https://assignment-11-serversite.vercel.app/add_purchase/${id}`,{
         method:'PATCH',
         headers:{
             'content-type':'application/json'

@@ -10,7 +10,7 @@ const SearchBar = ({setResults}) => {
 
 
   const fatchData=(value)=>{
-        fetch('http://localhost:5000/assignment')
+        fetch('https://assignment-11-serversite.vercel.app/assignment')
         .then(res=>res.json())
         .then(data=>{
             // console.log(data);
