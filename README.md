@@ -1,8 +1,17 @@
-# React + Vite
+# Beauty-Care
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live site:
 
-Currently, two official plugins are available:
+- [Beauty-Care-Firebase](https://assignment-11-120a0.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [GitHubLink](https://github.com/Porgramming-Hero-web-course/b9a11-client-side-Ahosan-1995)
+
+
+Features of this site:
+- Single page application loaded data efficiently
+- Full navigation control on the home page.
+- Data will be loaded very first and accurately.
+- All the content placement is well structured.
+- You can login and access our full site
+- For better user experience all different elements are seperated in different route.
+- Responsive design.
