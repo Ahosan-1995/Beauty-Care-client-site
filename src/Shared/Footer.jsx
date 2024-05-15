@@ -93,25 +93,25 @@ const Footer = () => {
 
               <div>
                 <h3 className=" uppercase dark:text-white">
-                  Blog
+                  SERVICES
                 </h3>
                 <a
                   href="#"
                   className="block mt-2 text-sm  dark:text-gray-400 hover:underline"
                 >
-                  Tec
+                  Haircut
                 </a>
                 <a
                   href="#"
                   className="block mt-2 text-sm  dark:text-gray-400 hover:underline"
                 >
-                  Music
+                  Beauty Care
                 </a>
                 <a
                   href="#"
                   className="block mt-2 text-sm  dark:text-gray-400 hover:underline"
                 >
-                  Videos
+                  Bride and Groom Makeover
                 </a>
               </div>
 
@@ -123,19 +123,19 @@ const Footer = () => {
                   href="#"
                   className="block mt-2 text-sm  dark:text-gray-400 hover:underline"
                 >
-                  Home Service
+                  BeautyCare Nail Polish
                 </a>
                 <a
                   href="#"
                   className="block mt-2 text-sm  dark:text-gray-400 hover:underline"
                 >
-                  Bride and Groom Makeover
+                  BeautyCare Foundation
                 </a>
                 <a
                   href="#"
                   className="block mt-2 text-sm  dark:text-gray-400 hover:underline"
                 >
-                  Beauty Care
+                  BeautyCare Shampoo
                 </a>
               </div>
 

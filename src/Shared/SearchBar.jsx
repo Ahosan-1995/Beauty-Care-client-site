@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
 const SearchBar = ({setResults}) => {
+
   const [input, setInput] = useState("");
 
 
@@ -31,6 +32,7 @@ const SearchBar = ({setResults}) => {
   const handleChange =(value)=>{
     setInput(value);
     fatchData(value);
+    
   }
 
   return (
